@@ -99,21 +99,26 @@ class DeCal(wx.Frame):
         self.Layout()
 
     def get_results(self, event):
-       bpm = self.spin_ctrl_bpm.GetValue()
-       nbpm = 60000 / bpm
+        bpm = self.spin_ctrl_bpm.GetValue()
+        if bpm is 0:
+            dlg = wx.MessageDialog(self, 'Le champ bpm doit contenir\nune valeur supérieure à zéro...', 'Erreur', wx.OK | wx.ICON_INFORMATION | wx.NO_DEFAULT | wx.CANCEL | wx.ICON_INFORMATION)
+            dlg.ShowModal()
+            dlg.Destroy()
+        else:
+            nbpm = 60000 / bpm
 
-       binaire = {'blanche': nbpm * 2, 'noire': nbpm, 'croche': nbpm / 2, 'dcroche': nbpm / 4}
-       ternaire = {'blanche': nbpm * 4 / 3, 'noire': nbpm * 2 / 3, 'croche': nbpm / 3, 'dcroche': nbpm / 6}
+            binaire = {'blanche': nbpm * 2, 'noire': nbpm, 'croche': nbpm / 2, 'dcroche': nbpm / 4}
+            ternaire = {'blanche': nbpm * 4 / 3, 'noire': nbpm * 2 / 3, 'croche': nbpm / 3, 'dcroche': nbpm / 6}
 
-       self.text_ctrl_1.SetValue(str(binaire['blanche']))
-       self.text_ctrl_2.SetValue(str(binaire['noire']))
-       self.text_ctrl_3.SetValue(str(binaire['croche']))
-       self.text_ctrl_4.SetValue(str(binaire['dcroche']))
+           self.text_ctrl_1.SetValue(str(binaire['blanche']))
+            self.text_ctrl_2.SetValue(str(binaire['noire']))
+            self.text_ctrl_3.SetValue(str(binaire['croche']))
+            self.text_ctrl_4.SetValue(str(binaire['dcroche']))
 
-       self.text_ctrl_5.SetValue(str(ternaire['blanche']))
-       self.text_ctrl_6.SetValue(str(ternaire['noire']))
-       self.text_ctrl_7.SetValue(str(ternaire['croche']))
-       self.text_ctrl_8.SetValue(str(ternaire['dcroche']))
+            self.text_ctrl_5.SetValue(str(ternaire['blanche']))
+            self.text_ctrl_6.SetValue(str(ternaire['noire']))
+            self.text_ctrl_7.SetValue(str(ternaire['croche']))
+            self.text_ctrl_8.SetValue(str(ternaire['dcroche']))
 
     def toggle_results(self, event):
         print "Event handler 'toggle_results' not implemented!"
@@ -140,4 +145,3 @@ if __name__ == "__main__":
     app.SetTopWindow(frame_main)
     frame_main.Show()
     app.MainLoop()
-    
