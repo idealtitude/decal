@@ -110,7 +110,7 @@ class DeCal(wx.Frame):
             binaire = {'blanche': nbpm * 2, 'noire': nbpm, 'croche': nbpm / 2, 'dcroche': nbpm / 4}
             ternaire = {'blanche': nbpm * 4 / 3, 'noire': nbpm * 2 / 3, 'croche': nbpm / 3, 'dcroche': nbpm / 6}
 
-           self.text_ctrl_1.SetValue(str(binaire['blanche']))
+            self.text_ctrl_1.SetValue(str(binaire['blanche']))
             self.text_ctrl_2.SetValue(str(binaire['noire']))
             self.text_ctrl_3.SetValue(str(binaire['croche']))
             self.text_ctrl_4.SetValue(str(binaire['dcroche']))
