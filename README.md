@@ -6,6 +6,6 @@ Currently under development, you can yet use the main function of this app: calc
 
 You need wxPython installed to run decal!
 
-Here a screenshot: http://pix.toile-libre.org/upload/original/1430435889.png
+Here a screenshot:
 
 ![Alt text](http://pix.toile-libre.org/upload/original/1430435889.png "Decal screenshot")
