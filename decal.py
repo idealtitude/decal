@@ -101,7 +101,7 @@ class DeCal(wx.Frame):
     def get_results(self, event):
         bpm = self.spin_ctrl_bpm.GetValue()
         if bpm is 0:
-            dlg = wx.MessageDialog(self, 'Le champ bpm doit contenir\nune valeur supérieure à zéro...', 'Erreur', wx.OK | wx.ICON_INFORMATION | wx.NO_DEFAULT | wx.CANCEL | wx.ICON_INFORMATION)
+            dlg = wx.MessageDialog(self, 'Le champ bpm doit contenir\nune valeur supérieure à zéro...', 'Erreur', wx.OK | wx.ICON_INFORMATION | wx.NO_DEFAULT | wx.ICON_INFORMATION)
             dlg.ShowModal()
             dlg.Destroy()
         else:
